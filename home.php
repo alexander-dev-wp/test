@@ -7,7 +7,7 @@
 get_header(); ?>
 
     <main>
-       
+       !!!
         <?php
         $subtitle = get_field('blog_subtitle', 'options');
         $title = get_field('blog_title', 'options'); 
