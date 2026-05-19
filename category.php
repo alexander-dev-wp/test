@@ -1,6 +1,6 @@
 <?php
 /**
- * Category
+ * Category 
  *
  * Standard loop for the category page
  */
