@@ -10,7 +10,7 @@ get_header(); ?>
         trait_exists
         <?php
         $subtitle = get_field('blog_subtitle', 'options');
-        $title = get_field('blog_title', 'options');
+        $title = get_field('blog_title', 'options'); 
         ?>
         <?php if ($subtitle || $title): ?>
             <section class="blog__hero-section" id="top">
