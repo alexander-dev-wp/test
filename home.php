@@ -26,6 +26,7 @@ get_header(); ?>
                 </div>
             </section>
         <?php endif; ?>
+        test 2
         <?php
         $arg = array(
             'post_type' => 'post',
