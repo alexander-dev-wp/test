@@ -1,0 +1,168 @@
+.showroom__section {
+  padding: 12.25rem 0 4.25rem 0;
+  @include breakpoint(small down) {
+    padding: 8.25rem 0 0 0;
+  }
+
+  .showroom__content {
+    max-width: 33rem;
+  }
+
+  .showroom__wrapper {
+    position: relative;
+    z-index: 2;
+    padding: rem-calc(15 90 15 90);
+    border-radius: 10px;
+    min-height: rem-calc(380);
+    display: flex;
+    align-items: center;
+    background-position: 50% 50% !important;
+    overflow: hidden;
+    transition: 1s;
+    background-size: 100% !important;
+    @include breakpoint(medium down){
+      background-size: cover !important;
+    }
+
+    &:hover{
+      background-size: 120% !important;
+      @include breakpoint(medium down){
+        background-size: cover !important;
+      }
+    }
+    &:before{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.58);
+      z-index: -1;
+    }
+    @include breakpoint(medium down) {
+      background-position: 70% 50% !important;
+    }
+    @include breakpoint(small down) {
+      padding: rem-calc(55 15);
+      min-height: rem-calc(751);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      &:before {
+        background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%) !important;
+        max-height: rem-calc(500);
+        max-width: none !important;
+      }
+    }
+
+
+    p {
+      max-width: rem-calc(430);
+    }
+
+    h6 {
+      color: $total-white;
+      line-height: 1.2;
+      font-size: rem-calc(16);
+      margin: 0;
+    }
+
+    h2 {
+      color: $total-white;
+      font-size: rem-calc(64);
+      line-height: 1.2;
+      font-family: $sub-font;
+      @include breakpoint(small down) {
+        font-size: rem-calc(40);
+      }
+      letter-spacing: -1px;
+    }
+
+    .showroom__link {
+      margin-top: rem-calc(33);
+      justify-content: center;
+
+    }
+  }
+}
+
+.showroom__gradient {
+  .showroom__wrapper {
+    &:before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+      opacity: 0.74;
+      max-width: rem-calc(685);
+      z-index: -1;
+      border-bottom-left-radius: 10px;
+      border-top-left-radius: 10px;
+    }
+  }
+}
+
+.showroom__centered {
+  .showroom__content {
+    @include breakpoint(medium up) {
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: none;
+    }
+  }
+
+  .showroom__link {
+    @include breakpoint(small down) {
+      width: fit-content !important;
+    }
+  }
+}
+
+.showroom__small {
+  .showroom__wrapper {
+    @include breakpoint(small down) {
+      min-height: rem-calc(430) !important;
+    }
+
+    h2 {
+      @include breakpoint(small down) {
+        font-size: rem-calc(32);
+        font-weight: 500;
+        text-align: left !important;
+      }
+    }
+  }
+}
+
+.carpet__showroom-section {
+  @include breakpoint(small down) {
+    padding: 5.25rem 0 0 0;
+  }
+}
+
+.laminate-flooring__showroom-section {
+  padding: rem-calc(150) 0 4.25rem 0;
+}
+
+.area-rugs__showroom-section {
+  padding: 9.5rem 0 4.25rem 0;
+}
+
+.products__showroom-section {
+  @include breakpoint(small down) {
+    padding: 4.25rem 0 0 0;
+  }
+
+  .showroom__link {
+    @include breakpoint(small down) {
+      width: 70%;
+      margin: 0 auto;
+    }
+  }
+}

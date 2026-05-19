@@ -1,0 +1,444 @@
+/*Hiring Page*/
+
+.hiring {
+  &__subtitle {
+    padding-top: rem-calc(18);
+    font-family: $roboto;
+    font-weight: 400;
+    font-size: clamp(16px, rem-calc(16), rem-calc(16));
+    line-height: 1.5;
+    color: $sub-color;
+    margin-bottom: 0;
+  }
+
+  &__hero {
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+
+    .hiring__hero-wrapper {
+      padding: rem-calc(15 0 62 0);
+      max-width: 75.6875rem;
+      margin: 0 auto;
+      min-height: rem-calc(395);
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+
+      @include breakpoint(small down) {
+        min-height: rem-calc(332);
+        align-items: flex-end;
+        padding: rem-calc(15 0 48 0);
+      }
+
+      h1 {
+        max-width: rem-calc(555);
+        color: $total-white;
+        line-height: 1.05;
+        font-size: rem-calc(86);
+        letter-spacing: -1px;
+
+        @include breakpoint(small down) {
+          font-size: rem-calc(52);
+        }
+      }
+    }
+  }
+
+  &__wrapper {
+    padding: rem-calc(82 0 24);
+    max-width: rem-calc(1264);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 51.7% 1fr;
+    grid-auto-rows: auto;
+    gap: rem-calc(40);
+
+    > *:nth-child(n + 3) {
+      grid-column: 1 / -1;
+    }
+
+    @include breakpoint(medium down) {
+      gap: 0;
+      grid-template-columns:  1fr;
+      padding: rem-calc(44 0 110);
+    }
+  }
+
+  &__form-title {
+    font-weight: 500;
+    font-size: rem-calc(24);
+    line-height: 1.4;
+    letter-spacing: -0.25px;
+    color: $total-white;
+    background-color: $total-black;
+    padding: rem-calc(26 44 14 44);
+    margin: 0;
+  }
+
+  &__form-wrapper {
+    border-radius: rem-calc(10);
+    overflow: hidden;
+
+    @include breakpoint(medium down) {
+      margin-top: rem-calc(22);
+    }
+
+    .hiring__form {
+      padding: rem-calc(50 28 34 44);
+      background-color: $secondary-background;
+      border-radius: rem-calc(0 0 10 10);
+
+      @include breakpoint(small down) {
+        padding: rem-calc(42 15 24);
+      }
+
+      @include breakpoint(375 down) {
+        padding: rem-calc(42 10 24);
+      }
+
+      .gform_wrapper {
+
+        .iti {
+          &__country-list {
+            max-height: rem-calc(200);
+          }
+
+          &__arrow {
+            margin-left: clamp(6px, rem-calc(6), rem-calc(6));
+            width: 0;
+            height: 0;
+            border-left: clamp(3px, rem-calc(3), rem-calc(3)) solid transparent;
+            border-right: clamp(3px, rem-calc(3), rem-calc(3)) solid transparent;
+            border-top: clamp(4px, rem-calc(4), rem-calc(4)) solid #555;
+          }
+
+          &__arrow--up {
+            border-top: none;
+            border-bottom: clamp(4px, rem-calc(4), rem-calc(4)) solid #555;
+          }
+        }
+
+        .gfield--type-fileupload, .custom_file_notice_1 {
+          margin-top: rem-calc(10);
+        }
+
+        .custom_upload_btn {
+          position: relative;
+          background-color: transparent;
+          padding: rem-calc(0 0 0 34);
+          color: $dark-gray-2;
+          font-weight: 400;
+          font-size: clamp(16px, rem-calc(16), rem-calc(16));
+          line-height: 1.5;
+
+          &:hover {
+            color: $sub-color;
+
+            &:before {
+              color: $sub-color;
+              transition: color .2s ease-in-out;
+            }
+          }
+
+          &:before {
+            font-family: $fa;
+            font-weight: 700;
+            content: '\f0c6';
+            position: absolute;
+            top: 0;
+            left: 2px;
+            line-height: 1;
+            font-size: rem-calc(22);
+          }
+        }
+
+        .custom_file_name {
+          display: block;
+          line-height: 3;
+
+          @include breakpoint(medium down) {
+            padding-left: rem-calc(36);
+          }
+          @include breakpoint(small down) {
+            padding-left: 0;
+          }
+        }
+
+        .gform_delete_file {
+          z-index: 5;
+          padding: rem-calc(0 6 6 6);
+
+          .dashicons-trash {
+            font-size: rem-calc(20);
+          }
+        }
+
+        .gform_footer {
+          padding-bottom: 0;
+          margin-top: rem-calc(12);
+
+          .gform_button[type=submit] {
+            justify-content: center;
+            width: 100%;
+            margin-bottom: 0;
+            padding: rem-calc(20 28);
+
+            &:before {
+              font-size: rem-calc(26);
+              line-height: 0;
+            }
+          }
+        }
+
+        .gform_fields {
+          column-gap: clamp(20px, rem-calc(20), rem-calc(20));
+          row-gap: clamp(18px, rem-calc(18), rem-calc(18));
+        }
+
+        .gform_submission_error {
+          margin-top: 0;
+          font-size: rem-calc(24);
+          line-height: 1.1;
+          margin-bottom: rem-calc(30);
+
+          @include breakpoint(small down) {
+            font-size: rem-calc(16);
+          }
+        }
+
+        .gchoice_1_9_1 {
+          margin-bottom: rem-calc(22) !important;
+        }
+
+        input, input[type=text], input[type=email], textarea, .select2-selection, .iti__selected-flag, .select2-selection {
+          background-color: $total-white !important;
+          padding: rem-calc(12 16);
+          height: rem-calc(48);
+        }
+
+        .gform_footer {
+          justify-content: flex-start !important;
+        }
+
+        .gfield_required, .gform_required_legend, .gfield_description.gform_fileupload_rules, .custom_file_notification {
+          display: none;
+        }
+
+        input, .iti__selected-flag, .textarea {
+          border-radius: clamp(4px, rem-calc(4), rem-calc(4));
+          border: 0;
+        }
+
+        .iti--allow-dropdown {
+          display: flex;
+          gap: clamp(8px, rem-calc(8), rem-calc(8));
+
+          input {
+            border: 0;
+            padding: rem-calc(16) !important;
+          }
+
+          .iti__flag-container {
+            position: static;
+          }
+        }
+
+        input[type=text], input[type=email], textarea {
+          font-size: clamp(16px, rem-calc(16), rem-calc(16));
+        }
+
+        input, textarea {
+          &::placeholder {
+            color: #666666;
+            font-weight: 400;
+            font-size: clamp(16px, rem-calc(16), rem-calc(16));
+            line-height: 1.5;
+          }
+        }
+
+        .gfield_label, .gsection_title, .custom_file_notice_1 {
+          color: $dark-gray-2;
+          font-size: clamp(14px, rem-calc(14), rem-calc(14));
+          font-weight: 400;
+          font-family: $font;
+        }
+
+        .gfield_label {
+          margin-bottom: clamp(6px, rem-calc(6), rem-calc(6));
+          line-height: 1.2;
+        }
+
+        .gsection {
+          border-bottom: unset;
+          padding: unset;
+          transform: translateY(64%);
+        }
+
+        .gfield .textarea {
+          resize: none;
+        }
+
+        .gfield textarea.small {
+          height: clamp(76px, rem-calc(76), rem-calc(76));
+        }
+
+        .gfield textarea.medium {
+          height: clamp(96px, rem-calc(96), rem-calc(96));
+        }
+
+        .custom_file_notice_1 {
+          font-style: italic;
+          color: $sub-color;
+          font-family: $roboto;
+          padding-left: rem-calc(14);
+
+
+        }
+
+        .gform_delete_file {
+          color: $sub-color;
+          @media (hover: hover) {
+            &:hover, &:focus {
+              color: $main-color;
+            }
+          }
+        }
+
+        .ginput_preview {
+          display: flex;
+          gap: rem-calc(10);
+          @include breakpoint(medium down) {
+            padding-left: rem-calc(36);
+          }
+          @include breakpoint(small down) {
+            padding-left: 0;
+            justify-content: center;
+            margin-bottom: 0;
+          }
+        }
+
+        .ginput_container_fileupload {
+          @include breakpoint(small down) {
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+
+  &__content {
+    margin-bottom: rem-calc(48);
+  }
+
+  &__anchor {
+    justify-content: flex-start;
+    padding: rem-calc(0 0 16 10);
+    @include breakpoint(medium down) {
+      margin-top: rem-calc(72);
+      justify-content: center;
+    }
+  }
+}
+
+.vacancy-h {
+  &__title {
+    font-size: rem-calc(48);
+    margin-bottom: rem-calc(40);
+    font-weight: 500;
+    letter-spacing: -0.4px;
+
+    @include breakpoint(small down) {
+      font-size: rem-calc(40);
+      margin-bottom: rem-calc(26);
+    }
+  }
+
+  &__short-info {
+    margin-left: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 38%);
+    column-gap: rem-calc(16);
+    row-gap: rem-calc(36);
+    list-style-type: none;
+    margin-bottom: rem-calc(64);
+
+    @include breakpoint(small down) {
+      grid-template-columns: repeat(2, 50%);
+      row-gap: rem-calc(14);
+    }
+    @include breakpoint(420 down) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    display: block;
+    width: rem-calc(30);
+    height: rem-calc(30);
+    transform: translateY(-50%);
+    z-index: 2;
+  }
+
+  &__short {
+    position: relative;
+    padding-left: rem-calc(42);
+    font-size: rem-calc(18);
+    color: $main-color;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    p {
+      margin-bottom: 0;
+    }
+
+    span {
+      display: block;
+      color: $light-gray;
+    }
+
+    a {
+      transition: color ease 0.2s;
+      @media (hover: hover) {
+        &:hover, &:focus {
+          color: rgba($main-color, 0.7);
+        }
+      }
+    }
+
+  }
+
+  &__description {
+    font-size: rem-calc(20);
+
+    ul, ol {
+      list-style-position: outside;
+      margin-left: rem-calc(30);
+
+      li::marker {
+        font-size: 0.8rem;
+      }
+    }
+
+    ul.styled-list, ol.styled-list {
+      margin-left: 0;
+    }
+
+    @include headings() {
+      color: $black-2;
+      font-weight: 500;
+    }
+
+    strong {
+      font-weight: 500;
+    }
+  }
+}
+

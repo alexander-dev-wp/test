@@ -1,0 +1,122 @@
+.accordion__section {
+  background-color: #F4F4F4;
+  padding: rem-calc(90 0 190);
+  @include breakpoint(small down) {
+    padding: rem-calc(50 0);
+  }
+
+  h3 {
+    max-width: rem-calc(550);
+    margin-bottom: rem-calc(55);
+    @include breakpoint(small down) {
+      text-align: center;
+      max-width: none;
+    }
+  }
+
+  .accordion-image {
+    display: none;
+  }
+
+  .accordion-image.is-active {
+    display: block;
+    height: 100%;
+  }
+
+  .accordion__content {
+    max-width: rem-calc(515);
+
+    img {
+      max-height: rem-calc(370);
+      height: 100%;
+
+      @include breakpoint(small down) {
+        max-height: 16.125rem;
+      }
+    }
+
+    @include breakpoint(medium down) {
+      max-width: none;
+    }
+  }
+
+  .accordion__content img {
+    border-radius: 10px;
+    object-fit: cover;
+  }
+
+  .accordion__wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 5rem;
+    row-gap: rem-calc(50);
+    @include breakpoint(medium down) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  .accordion__block {
+    background-color: transparent;
+
+    .accordion-item:last-child {
+      .accordion-title {
+        border-bottom: 0px;
+      }
+    }
+  }
+
+  .accordion-title {
+    border: 0;
+    border-bottom: 1px solid #DDDDDD;
+    background-color: transparent !important;
+    @include breakpoint(small down) {
+      padding-right: rem-calc(45);
+    }
+  }
+
+
+  .accordion-title:before {
+    content: "";
+    font-weight: 900;
+    font-family: $fa;
+    color: $sub-color;
+    font-size: rem-calc(18);
+    width: rem-calc(34);
+    height: rem-calc(34);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid;
+    transform: translate(0, -50%);
+    margin-top: 0;
+    @include breakpoint(small down) {
+      right: 0;
+    }
+  }
+
+  .is-active .accordion-title:before {
+    content: "";
+  }
+
+
+  .accordion-content {
+    background-color: transparent;
+    border: 0px;
+    padding-bottom: 2rem;
+    padding-top: 0;
+
+    p {
+      max-width: rem-calc(496);
+    }
+  }
+
+
+  .is-active .accordion-title {
+    border-bottom: 0;
+  }
+
+  .is-active .accordion-content {
+    border-bottom: 1px solid #DDDDDD;
+  }
+}

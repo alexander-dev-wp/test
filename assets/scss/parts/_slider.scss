@@ -1,0 +1,17 @@
+/*Slider Section*/
+.slider__section {
+  padding-top: rem-calc(100);
+
+  .slider__item {
+    padding: rem-calc(0 18);
+
+    img {
+      width: 100%;
+      object-fit: cover;
+      @include breakpoint(small down) {
+        height: 31.75rem;
+        border-radius: 10px;
+      }
+    }
+  }
+}

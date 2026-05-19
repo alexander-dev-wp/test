@@ -1,0 +1,66 @@
+/* ---------------------------------------
+	TMPL: About
+--------------------------------------- */
+/* Hero Section */
+.hero__section {
+  padding: rem-calc(102 0 0 0);
+  @include breakpoint(small down) {
+    padding: rem-calc(61 0 0 0);
+  }
+
+  p {
+    max-width: rem-calc(937);
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: rem-calc(48);
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: 0;
+    max-width: rem-calc(660);
+    margin: 0 auto rem-calc(30) auto;
+    @include breakpoint(small down) {
+      font-size: rem-calc(38);
+    }
+  }
+
+  //padding-bottom: rem-calc(66);
+}
+
+/*Video Section*/
+.about-video__section {
+  padding-bottom: rem-calc(160) !important;
+  @include breakpoint(small down) {
+    padding-bottom: rem-calc(45) !important;
+  }
+}
+
+.video__section {
+  padding: rem-calc(66 0 0 0);
+  @include breakpoint(small down) {
+    padding: 4.125rem 0 2rem 0;
+  }
+
+  .video__wrapper {
+    margin: 0 auto;
+    max-width: rem-calc(1238);
+  }
+
+  video {
+    width: 100%;
+    border-radius: 10px;
+    @include breakpoint(small down) {
+      height: rem-calc(725);
+      object-fit: cover;
+    }
+  }
+}
+
+.about-us__value-section {
+  h2 {
+    @include breakpoint(small down) {
+      font-size: rem-calc(38);
+    }
+  }
+}

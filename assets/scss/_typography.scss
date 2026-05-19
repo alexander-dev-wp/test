@@ -1,0 +1,640 @@
+/* ---------------------------------------
+	Typography
+--------------------------------------- */
+
+html {
+  // Specify provided design width (psd, xd template full width), NOT container
+  $design-width: 1440;
+  // Use this static value if default column gap (32px) fits you design.
+  font-size: divide(16, $design-width) * 100vw;
+
+  .grid-container {
+    padding-left: rem-calc(25);
+    padding-right: rem-calc(25);
+  }
+
+  // Use dynamic font size to prevent Mozilla FF columns wrap
+  /*
+  $step-size: $design-width - 1025;
+  @for $i from 1 through 30 {
+      $size: 1000 + 100 * $i + (floor(divide($i, 10)) * 100 * ceil(divide($i, 10)) );
+      @include breakpoint($size) {
+          font-size: round(divide(16px, $design-width) * $size);
+      }
+  }*/
+
+  //@include breakpoint(xlarge down) {
+  //  font-size: round(divide(18px, $design-width) * 1440); // Increases site size on 1201-1440px. make sure site is not braking on this resolutions
+  //}
+
+  @include breakpoint(large down) {
+    font-size: round(divide(16px, $design-width) * 1200); // Increases site size on 1025-1200px. make sure site is not braking on this resolutions
+  }
+
+  @include breakpoint(small down) {
+    font-size: 16px;
+  }
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: clamp(14px,#{rem-calc(16)},#{rem-calc(16)});
+
+  @include breakpoint(small down) {
+    font-size: rem-calc(16);
+  }
+
+}
+
+.text-large {
+  p {
+    font-size: rem-calc(20);
+    @include breakpoint(small down) {
+      font-size: 16px;
+    }
+  }
+}
+
+.text-medium {
+  p {
+    font-size: rem-calc(18);
+    line-height: 1.5;
+    @include breakpoint(small down) {
+      font-size: 16px;
+    }
+  }
+}
+
+.subtitle {
+  font-size: 14px;
+  line-height: 1.428;
+  padding: rem-calc(8 14);
+  background-color: #E11B281A;
+  color: $sub-color;
+  border-radius: 8px;
+  width: fit-content;
+  margin: 0 auto;
+  font-family: $inter;
+  font-weight: 500;
+  @include breakpoint(1440 up) {
+    font-size: rem-calc(14);
+  }
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  a {
+    color: inherit;
+  }
+}
+
+h1, .h1, .has-h-1-font-size {
+  /*basic heading styles*/
+  font-size: rem-calc(56);
+  line-height: 1.2;
+  font-family: $sub-font;
+  color: $total-black;
+  @include breakpoint(small down) {
+    font-size: rem-calc(38);
+  }
+  letter-spacing: -1px;
+}
+
+h2, .h2, .has-h-2-font-size {
+  /*basic heading styles*/
+  font-size: rem-calc(48);
+  line-height: 1.2;
+  color: $total-black;
+  font-weight: 600;
+  @include breakpoint(small down) {
+    font-size: rem-calc(32px);
+  }
+  font-family: $sub-font;
+}
+
+h3, .h3, .has-h-3-font-size {
+  /*basic heading styles*/
+  font-size: rem-calc(40);
+  line-height: 1.2;
+  color: $total-black;
+  @include breakpoint(small down) {
+    font-size: 32px;
+  }
+  font-family: $sub-font;
+  font-weight: 500;
+}
+
+h4, .h4, .has-h-4-font-size {
+  /*basic heading styles*/
+  font-family: $sub-font;
+  font-weight: 500;
+  font-size: rem-calc(32);
+
+  line-height: 1.3;
+  color: $total-black;
+  @include breakpoint(small down) {
+    font-size: rem-calc(24);
+  }
+}
+
+h5, .h5, .has-h-5-font-size {
+  /*basic heading styles*/
+  font-size: rem-calc(24);
+  font-weight: 600;
+  line-height: 1.4;
+  color: $total-black;
+  font-family: $sub-font;
+}
+
+h6, .h6, .has-h-6-font-size {
+  /*basic heading styles*/
+  font-size: rem-calc(20);
+  line-height: 1.4;
+  color: $total-black;
+  font-family: $sub-font;
+  font-weight: 600;
+}
+
+p {
+  /*basic paragraph styles*/
+  &:empty {
+    display: none;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+}
+
+ul {
+  /*basic list styles*/
+  font-size: inherit;
+
+  li {
+    /*basic list-item styles*/
+  }
+}
+
+ul, ol {
+  list-style-position: inside;
+}
+
+blockquote {
+
+}
+
+address {
+  margin-bottom: $global-margin;
+  font-style: normal;
+}
+
+.button__large {
+  padding: rem-calc(16 28);
+}
+
+.button__link {
+  color: #F5F5F5;
+  transition: all 0.2s ease-in-out;
+  background-color: $sub-color;
+  border: 1px solid $sub-color;
+  padding: rem-calc(12 20);
+  font-family: $sub-font;
+  box-shadow: 0px 1px 2px 0px #1018280D;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  gap: rem-calc(8);
+  font-weight: 500;
+
+  img {
+    max-width: rem-calc(20);
+  }
+
+  &:hover, &:focus {
+    /*basic hover and focus effects*/
+    border: 1px solid $sub-color;
+    background-color: $total-black;
+    color: $total-white
+  }
+}
+
+a, button, .button, input[type='submit'], input[type='reset'], input[type='button'] {
+  // Change opacity to 0.5 and color by client request.
+  -webkit-tap-highlight-color: rgba(invert($main-color), 0.5) !important;
+}
+
+/* ---------------------------------------
+	Forms/Inputs
+--------------------------------------- */
+
+.no-outline {
+  button, a, [tabindex] {
+    outline: none;
+  }
+}
+
+/* Placeholder styling */
+
+input, textarea {
+  &::placeholder {
+    opacity: 1;
+  }
+}
+
+/* Input Styling */
+:root {
+  --input-fz: #{$input-font-size};
+  --input-lh: #{$input-line-height};
+  --input-pt: #{get-side($input-padding, 'top')};
+  --input-pb: #{get-side($input-padding, 'bottom')};
+  --input-pl: #{get-side($input-padding, 'left')};
+  --input-pr: #{get-side($input-padding, 'right')};
+  --input-bd: #{get-border-value($input-border, 'width')};
+}
+
+@include all-inputs {
+  /* STYLES GO THERE */
+  --input-height: calc(var(--input-fz) * var(--input-lh) + var(--input-pt) + var(--input-pb) + var(--input-bd) * 2);
+  height: var(--input-height);
+  margin-bottom: 0;
+  padding-top: var(--input-pt);
+  padding-bottom: var(--input-pb);
+  padding-left: var(--input-pl);
+  padding-right: var(--input-pr);
+  border-width: var(--input-bd);
+  font-size: var(--input-fz);
+  line-height: var(--input-lh);
+
+  &:focus {
+    border-width: var(--input-bd);
+  }
+}
+
+select:not([multiple]) {
+  padding: $input-padding;
+  padding-right: rem-calc(32);
+}
+
+/* ---------------------------------------
+	Select 2
+--------------------------------------- */
+body {
+  .select2-hidden-accessible {
+    left: 0;
+  }
+
+  .select2 {
+    font-weight: 300;
+    text-align: left;
+    width: 100% !important;
+    display: flex;
+
+    .selection {
+      flex: 1;
+    }
+  }
+
+  .select2:focus {
+    outline: none;
+  }
+
+  .select2-dropdown {
+    padding: 0;
+    border: $input-border;
+    border-radius: 0 0 $global-radius $global-radius;
+    background-color: #ffffff;
+    font-size: clamp(12px, rem-calc(14), rem-calc(14));
+
+    li {
+      margin: 0;
+      padding: 0 rem-calc(10);
+      font-size: inherit;
+      line-height: 1.86;
+      transition: all 0.15s ease-in;
+
+      &:hover {
+        background: #ededed;
+      }
+    }
+  }
+
+  .select2-container {
+    .select2-selection {
+      margin: 0;
+      padding: $input-padding;
+      border: $input-border;
+      border-radius: $input-radius;
+      font-size: $input-font-size;
+      line-height: normal;
+
+      &--single {
+        height: var(--input-height);
+
+        .select2-selection__rendered {
+          padding: 0;
+          color: $input-color;
+          line-height: $input-line-height;
+        }
+
+        .select2-selection__placeholder {
+          color: $input-placeholder-color;
+        }
+
+        .select2-selection__clear {
+          margin-right: rem-calc(8);
+        }
+
+        .select2-selection__arrow {
+          top: 50%;
+          right: rem-calc(10);
+          width: auto;
+          height: auto;
+          font-size: rem-calc(12);
+          line-height: 1;
+          transform: translateY(-50%);
+
+          @include breakpoint(xlarge) {
+            &::after, &::before {
+              right: rem-calc(32);
+            }
+          }
+
+          &::after {
+            content: '\f078';
+            color: $input-color;
+            font-family: $fa;
+
+            font-weight: 900;
+          }
+
+          b {
+            display: none;
+          }
+        }
+
+      }
+
+      &--multiple {
+        min-height: var(--input-height);
+        height: auto;
+
+        .select2-selection__rendered {
+          line-height: $input-line-height;
+          padding: 0;
+          display: inline;
+          vertical-align: middle;
+
+          li {
+            margin: 0 2px 2px 0;
+          }
+        }
+
+        // Single choice in multiselect mode
+        .select2-selection__choice {
+          border-radius: 0;
+          display: inline-block;
+          padding: rem-calc(0 2 0 16);
+          box-shadow: inset 0 0 0 1px $medium-gray;
+          background-color: $light-gray;
+          border: none;
+        }
+
+        .select2-selection__choice__remove {
+          padding: 0 rem-calc(4) !important;
+          min-block-size: 0 !important;
+          display: flex !important;
+          align-items: center !important;
+          background-color: transparent !important;
+          color: inherit !important;
+          border: none !important;
+          line-height: 1 !important;
+          top: 50%;
+          transform: translateY(-50%);
+
+          span {
+            line-height: 1;
+          }
+        }
+
+        .select2-search {
+          vertical-align: middle;
+          margin: rem-calc(3);
+          display: inline-flex;
+        }
+
+        .select2-search__field {
+          height: rem-calc(18);
+          margin-top: 0;
+          margin-left: rem-calc(4);
+          font-size: inherit;
+          line-height: inherit;
+          display: inline-block;
+        }
+      }
+    }
+
+    &--default {
+      .select2-results__option {
+        &--highlighted[aria-selected],
+        &--highlighted[data-selected],
+        &[aria-selected=true],
+        &[data-selected=true] {
+          background: #ededed;
+          color: $text-color;
+        }
+      }
+
+      &.select2-container--focus {
+        .select2-selection {
+          outline: none;
+          background-color: $input-background-focus;
+          border: $input-border-focus;
+        }
+      }
+    }
+
+    &--open {
+      .select2-dropdown--below {
+        border-top: $input-border;
+      }
+
+      .select2-selection__arrow {
+        &::after {
+          content: '\f077' !important;
+        }
+      }
+    }
+  }
+
+  .select2-dropdown .select2-search--dropdown .select2-search__field {
+    height: auto;
+    padding: rem-calc(4 10);
+  }
+}
+
+textarea[rows] {
+  /*Styles for TextArea*/
+  max-width: 100%;
+  height: rem-calc(160);
+}
+
+[type=number] {
+  -moz-appearance: textfield;
+
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    margin: 0;
+    -webkit-appearance: none;
+  }
+}
+
+.number-box {
+  position: relative;
+  display: inline-block;
+  min-width: rem-calc(64);
+
+  input {
+    width: 100%;
+    padding-right: rem-calc(20) !important;
+  }
+}
+
+.number-box__control {
+  position: absolute;
+  right: rem-calc(8);
+  font-size: rem-calc(16);
+  cursor: pointer;
+  line-height: 0.75;
+  height: 0.75em;
+
+  &--inc {
+    top: rem-calc(6);
+  }
+
+  &--dec {
+    bottom: rem-calc(6);
+  }
+}
+
+[type=checkbox],
+[type=file],
+[type=radio] {
+  margin-bottom: 0;
+}
+
+$checkbox-size: var(--checkbox-size, 1rem);
+/*
+// Custom checkbox / radio input style
+
+[type=checkbox], [type=radio] {
+  @extend %css-clip;
+
+  + * {
+    display: block;
+    position: relative;
+    margin-right: 0;
+    margin-left: 0;
+	  padding-left: calc(#{$checkbox-size} + #{rem-calc(8)});
+    line-height: 1.4;
+    letter-spacing: 0;
+    text-transform: none;
+    font-size: 1.125rem;
+    color: inherit;
+    font-weight: 500;
+    border: none;
+    width: auto;
+    height: auto;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: $checkbox-size;
+      height: $checkbox-size;
+      margin-top: calc(#{$checkbox-size} / -2);
+      border: 1px solid #777;
+      background-color: #fff;
+    }
+
+    &:after {
+      position: absolute;
+      top: 50%;
+      left: calc(#{$checkbox-size} / 6);
+      color: $white;
+      font-family: $fa;
+      font-size: calc(#{$checkbox-size} * 2 / 3);
+      font-weight: 900;
+      line-height: 1;
+      transform: translateY(-50%);
+      width: auto;
+      height: auto;
+      border: none;
+    }
+  }
+
+  &:checked + * {
+
+    &::before {
+      background-color: $white;
+      border-color: $black;
+    }
+
+    &:after {
+      content: '\f00c';
+    }
+  }
+
+  &:focus + * {
+    outline: none;
+  }
+}
+
+[type=radio] {
+  + *  {
+    &::before {
+      border-radius: 50%;
+    }
+  }
+
+  &:checked + * {
+    &::before {
+      background-color: $white;
+    }
+
+    &:after {
+      content: '';
+      left: calc(#{$checkbox-size} / 4);
+      width: calc(#{$checkbox-size} / 2);
+      height: calc(#{$checkbox-size} / 2);
+      border-radius: 50%;
+      background-color: $black;
+    }
+  }
+}
+*/
+
+button, .button, input[type='submit'], input[type='reset'], input[type='button'] {
+  border-width: $button-hollow-border-width;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+
+  &:hover, &:focus {
+
+  }
+
+  &.hollow {
+    &:hover, &:focus {
+
+    }
+  }
+}
+
+/* Button additional styles */
+
+.button {
+  &:hover, &:focus {
+    /*basic hover and focus effects*/
+  }
+}

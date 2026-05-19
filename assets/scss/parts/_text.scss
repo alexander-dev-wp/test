@@ -1,0 +1,21 @@
+.laminate__text-section {
+  padding-top: rem-calc(20);
+  padding-bottom: rem-calc(156);
+
+  .laminate__text-wrapper {
+    max-width: rem-calc(958);
+    margin: 0 auto;
+    font-size: rem-calc(40);
+    line-height: 1.34;
+    font-family: $sub-font;
+    font-weight: 500;
+    @include breakpoint(small down) {
+      font-size: rem-calc(24);
+    }
+  }
+}
+
+.area__rugs-text .laminate__text-wrapper {
+  font-size: rem-calc(32);
+  max-width: rem-calc(851);
+}

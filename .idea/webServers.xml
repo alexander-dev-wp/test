@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="6501357e-fc24-4b36-9853-50718c6c0d73" name="1" url="https://vip-marketing-carpet-wholesalers-staging.mystagingwebsite.com/">
+        <fileTransfer rootFolder="/htdocs/wp-content/themes/carpetwholesalers" accessType="SFTP" host="sftp.pressable.com" port="22" sshConfigId="88cb8157-2e5e-4084-9845-367acea03969" sshConfig="b0d536eed0117e9c1@sftp.pressable.com:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

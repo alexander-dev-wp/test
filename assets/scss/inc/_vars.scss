@@ -1,0 +1,100 @@
+// Project variables
+
+$text-color: #414547;
+$secondary-text-color: #191B1E;
+$main-color: #414547;
+$sub-color: #E11B28;
+$secondary-background: #F4F4F4;
+$total-black: black;
+$black-2:#1b1b1f;
+$total-white: white;
+$light-gray: #DDDDDD;
+$dark-gray-2: #333;
+$font: "Almarai", sans-serif;
+$sub-font: 'SF Pro Display', sans-serif;
+$inter: "Inter", sans-serif;
+$fa: 'Font Awesome 6 Free';
+$fab: 'Font Awesome 6 Brands';
+$roboto: 'Roboto', serif;
+
+// Font Awesome Vars
+$fa-font-path: "../fonts";
+$fa-font-display: swap;
+
+// Project mixins
+
+%css-clip {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  word-wrap: normal !important;
+  clip-path: inset(50%);
+}
+
+
+// Custom fonts
+// Use https://transfonter.org/ service with "Fix vertical metrics" setting
+// to get correct converted web fonts. Use woff2 format. NOT ttf or otf!
+
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('../fonts/sfprodisplay/FontsFree-Net-SFProDisplay-Semibold.ttf') format('truetype');
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('../fonts/sfprodisplay/SFPRODISPLAYSEMIBOLDITALIC.OTF') format('OTF');
+  font-weight: 600;
+  font-display: swap;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('../fonts/sfprodisplay/SFPRODISPLAYMEDIUM.OTF') format('OTF');
+  font-weight: 500;
+  font-display: swap;
+}
+
+
+
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../fonts/OpenSans-Italic.woff2') format('woff2');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../fonts/OpenSans-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../fonts/OpenSans-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../fonts/OpenSans-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}

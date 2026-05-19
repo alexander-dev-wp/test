@@ -1,0 +1,117 @@
+.value__section {
+  padding-top: 11rem;
+  @include breakpoint(small down) {
+    padding-top: 6.5rem;
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: rem-calc(47);
+  }
+
+  .value__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: rem-calc(24);
+    row-gap: rem-calc(35);
+    max-width: rem-calc(1200);
+    margin: 0 auto;
+    @include breakpoint(medium down) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    //@include breakpoint(small down) {
+    //  grid-template-columns: repeat(1, 1fr);
+    //}
+  }
+
+
+  .value__card-item {
+    position: relative;
+    border-radius: 10px;
+    border: 1px solid #DDDDDD;
+    overflow: hidden;
+
+    .value__card-image {
+      height: rem-calc(434);
+      width: 100%;
+      object-fit: cover;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+
+    .value__card-content {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .value__card-title {
+      display: flex;
+      padding: rem-calc(27 23 15);
+      align-items: center;
+      gap: rem-calc(14);
+      background-repeat: no-repeat !important;
+      background-size: cover !important;
+      background-position: 70% 0% !important;
+      //min-height: rem-calc(104);
+
+      h5 {
+        font-size: rem-calc(22);
+        max-width: 9.625rem;
+      }
+    }
+
+    .value__cards__block {
+
+    }
+
+    .value__card-number {
+      font-size: rem-calc(31);
+      font-weight: 600;
+      color: #DDDDDD;
+      line-height: 1.16;
+      font-family: $sub-font;
+    }
+
+
+    .value__card-text {
+      background-color: $total-white;
+      transition-duration: 0.3s;
+      transition-property: height, padding, min-height;
+      padding: rem-calc(0 23 10 23);
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+      column-gap: rem-calc(15);
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      @include breakpoint(large up) {
+        min-height: rem-calc(74);
+      }
+
+      p {
+        font-size: 14px;
+        font-family: $roboto;
+        @include breakpoint(1440 up) {
+          font-size: rem-calc(14);
+        }
+      }
+    }
+
+
+  }
+}
+
+.about-us__showroom-section {
+  padding-top: 3.5rem;
+  @include breakpoint(small down) {
+    padding-top: 2rem;
+  }
+}
+
+.about-us__value-section {
+  padding-top: 0;
+
+  .value__wrapper h5 {
+    font-size: rem-calc(25)!important;
+  }
+}

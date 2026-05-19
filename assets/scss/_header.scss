@@ -1,0 +1,546 @@
+
+.logo {
+  h1 {
+    font-size: 0;
+  }
+
+  a {
+    display: inline-block;
+  }
+
+  img {
+    width: 12rem;
+    height: auto;
+    object-fit: contain;
+    @include breakpoint(small down) {
+      max-width: 7rem;
+    }
+  }
+
+  @include breakpoint(medium down) {
+    max-width: 50%;
+  }
+}
+
+.sub__header {
+  background-color: #191B1E;
+  padding: 0.6875rem rem-calc(50) 0.6875rem rem-calc(8);
+  @include breakpoint(small down) {
+    padding: 0.6875rem rem-calc(8) 0.6875rem rem-calc(8);
+  }
+
+  .sub__header-links {
+    display: flex;
+    gap: rem-calc(16);
+
+    a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      gap: rem-calc(8);
+      color: $total-white;
+      font-family: $sub-font;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      img {
+        max-width: rem-calc(21);
+      }
+    }
+
+  }
+
+}
+
+.sub__hiring-link {
+  animation: hiring 1.3s ease infinite;
+}
+
+@keyframes hiring {
+  0% {
+    color: $total-white;
+  }
+
+  100% {
+    color: $sub-color;
+  }
+}
+
+
+@include breakpoint(small down) {
+  .sub__header {
+    padding-inline: rem-calc(16);
+  }
+  .sub__header__wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    .sub__header-links {
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
+  .header-menu {
+    display: flex;
+    flex-direction: column;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  header {
+    .products__link {
+      margin-top: rem-calc(10);
+    }
+  }
+}
+
+@include breakpoint(medium down) {
+  /* TOP BAR Mobile STYLING */
+  header {
+    margin-top: rem-calc(20);
+  }
+  .mobile__buttons {
+    display: flex;
+    align-items: center;
+    gap: rem-calc(30);
+  }
+  .products__link a {
+    font-size: rem-calc(20);
+    color: $sub-color !important;
+    line-height: 1.36;
+    font-weight: 500;
+    font-family: $sub-font !important;
+
+  }
+  .apply__button a {
+    color: $total-white !important;
+    transition: all 0.2s ease-in-out;
+    background-color: $sub-color !important;
+    border: 1px solid $sub-color;
+    padding: rem-calc(12 20) !important;
+    font-family: $inter !important;
+    box-shadow: 0px 1px 2px 0px #1018280D;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    gap: rem-calc(8);
+    margin-left: rem-calc(0);
+    font-size: rem-calc(18);
+
+    img {
+      max-width: rem-calc(20);
+    }
+
+    &:hover, &:focus {
+      /*basic hover and focus effects*/
+      background-color: $total-black !important;
+      color: $total-white;
+    }
+  }
+
+
+  #main-menu {
+    position: absolute;
+    z-index: 9999999999;
+  }
+  .sub__header {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+
+  }
+
+  .header {
+    padding-bottom: 0;
+  }
+
+  .menu-grid-container {
+    --grid-col-gap: 0px;
+    padding-left: 0;
+    padding-right: 0;
+
+  }
+
+  .cell.header__logo-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: rem-calc(0 30 10 30);
+    --grid-col-gap: #{rem-calc(32)};
+  }
+
+  .title-bar {
+    line-height: rem-calc(45);
+
+    .menu-icon {
+      padding: 0;
+      border: none;
+      background-color: transparent;
+      -webkit-tap-highlight-color: transparent !important;
+
+      @include menu-icon($main-color, $main-color, rem-calc(30), rem-calc(24), rem-calc(3));
+    }
+
+  }
+
+  .top-bar {
+    display: none;
+    //background: $main-color; /* menu list background color */
+  }
+
+  .header-menu {
+    background: #F4F4F4;
+    gap: rem-calc(15);
+    padding: rem-calc(35 18 15 18);
+
+    li {
+      > a {
+        background: transparent; /* menu item background color */
+        color: $main-color; /* menu item text color */
+        line-height: 1.7;
+        font-family: $inter;
+        font-weight: 500;
+
+        &:hover {
+          color: $sub-color;
+        }
+
+        &:focus {
+          &, & + .submenu-toggle {
+            //background: darken($main-color, 5); /* menu item background color on hover */
+            color: $sub-color;
+          }
+        }
+
+        &.button {
+          padding: $button-padding;
+          display: inline-block;
+        }
+      }
+
+      &.current-menu-item, &.current_page_ancestor, &.current_page_parent {
+        > a, .submenu-toggle {
+          //background: lighten($main-color, 5); /* current/parent menu item background color */
+          color: $sub-color;
+        }
+      }
+
+      &[aria-expanded='true'] {
+        > a, .submenu-toggle {
+          //background: darken($main-color, 3); /* menu item background color on open dropdown */
+        }
+      }
+
+      &.has-button {
+        padding-top: rem-calc(4);
+        padding-bottom: rem-calc(4);
+      }
+    }
+
+    .submenu-toggle {
+      padding: 0;
+    }
+
+    .submenu {
+      a {
+        padding-left: #{get-side($accordionmenu-padding, 'left') * 1.65};
+      }
+
+      .submenu {
+        a {
+          padding-left: #{get-side($accordionmenu-padding, 'left') * 2.3};
+        }
+      }
+    }
+  }
+}
+
+.sub__header {
+  background-color: #191B1E;
+  padding: 0.6875rem rem-calc(50) 0.6875rem rem-calc(8);
+  @include breakpoint(small down) {
+    padding: 0.6875rem rem-calc(8) 0.6875rem rem-calc(8);
+  }
+
+  .sub__header-link a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: rem-calc(8);
+    color: $total-white;
+    font-family: $sub-font;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    img {
+      max-width: rem-calc(21);
+    }
+  }
+}
+
+
+@include breakpoint(large) {
+  /* TOP BAR STYLING */
+
+  .header {
+
+  }
+
+  .menu-grid-container {
+    padding: rem-calc(10 30);
+  }
+  .sub__header {
+
+    .sub__header__wrapper {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    ul {
+      list-style: none;
+      display: flex;
+
+      li:last-child {
+        border-right: 0;
+      }
+    }
+
+    li {
+      padding: rem-calc(0 11);
+      border-right: 1px solid #4C4C4C;
+
+      &.current-menu-item, &.current_page_ancestor, &.current_page_parent {
+        > a {
+          &:before {
+            width: 100% !important;
+          }
+        }
+      }
+    }
+
+    #sub-menu a {
+      border-bottom: 1px solid #191B1E;
+      color: $total-white;
+      transition-duration: 0.2s;
+      line-height: 1.4;
+      position: relative;
+
+      font-family: $sub-font;
+      font-weight: 500;
+      height: 100%;
+      display: block;
+      @include breakpoint(1025 down) {
+        font-size: 14px;
+      }
+      @include breakpoint(1440 up) {
+        font-size: rem-calc(16);
+      }
+
+      &:before {
+        content: "";
+        width: 0%;
+        transition-duration: 0.3s;
+        position: absolute;
+        height: 1px;
+        left: 0;
+        background-color: $sub-color;
+        bottom: 0;
+      }
+
+      &:hover, &:focus {
+        &:before {
+          width: 100%;
+        }
+      }
+    }
+
+  }
+
+  .contact__button a {
+    color: $main-color !important;
+    transition: all 0.2s ease-in-out;
+    background-color: $total-white;
+    border: 1px solid #D0D5DD;
+    padding: rem-calc(15 20) !important;
+    font-family: $inter !important;
+    box-shadow: 0px 1px 2px 0px #1018280D;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    gap: rem-calc(8);
+    font-size: rem-calc(18);
+    line-height: 1.555;
+    font-weight: 500;
+    margin-left: rem-calc(40);
+    @media (max-width: rem-calc(1060)) {
+      margin-left: rem-calc(0);
+    }
+
+    img {
+      max-width: rem-calc(20);
+    }
+
+    &:hover, &:focus {
+      /*basic hover and focus effects*/
+      border: 1px solid $sub-color;
+    }
+  }
+  .contact__button.current-menu-item a {
+    border: 1px solid $sub-color;
+    color: $main-color !important;
+
+  }
+
+  .apply__button a {
+    color: $total-white !important;
+    transition: all 0.2s ease-in-out;
+    background-color: $sub-color;
+    border: 1px solid $sub-color;
+    padding: rem-calc(15 20) !important;
+    font-family: $inter !important;
+    box-shadow: 0px 1px 2px 0px #1018280D;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    gap: rem-calc(8);
+    margin-left: rem-calc(10);
+    font-size: rem-calc(18);
+
+    img {
+      max-width: rem-calc(20);
+    }
+
+    &:hover, &:focus {
+      /*basic hover and focus effects*/
+      background-color: $total-black;
+      color: $total-white;
+      border: 1px solid $sub-color;
+    }
+  }
+
+
+  .header-menu.menu {
+    /* Align menu items to the right */
+    align-items: center;
+    justify-content: flex-end;
+
+    /* Align menu items to the center */
+    // justify-content: center;
+
+    > li {
+      > a {
+        /* Style for first level menu links */
+
+      }
+    }
+
+    li {
+      > a {
+        /* Regular menu item style */
+        font-family: $sub-font;
+        color: #666666;
+        line-height: 1.4;
+        font-weight: 500;
+        padding: rem-calc(0 13);
+        font-size: rem-calc(18);
+
+        &:hover, &:focus {
+          /* menu item style on hover */
+          color: #010101;
+        }
+
+        &.button {
+          padding: $button-padding;
+          color: $button-color;
+          line-height: 1;
+        }
+      }
+
+      &.current-menu-item, &.current_page_ancestor, &.current_page_parent {
+        > a {
+          /* Style of Current page and Ancestor page */
+          color: $sub-color;
+        }
+      }
+
+      &.has-dropdown {
+        > a {
+          /* Style of item with dropdown */
+        }
+      }
+
+      &.is-active > a {
+        /* Parent link style on dropdown hover */
+        background: invert($main-color);
+        color: $main-color;
+      }
+    }
+
+    /* Dropdown item styling */
+
+    .submenu {
+      z-index: 11;
+      display: none;
+
+      &.js-dropdown-active {
+        display: block;
+      }
+
+      li {
+        > a {
+          /* Regular link in dropdown */
+          background: invert($main-color);
+          color: $main-color;
+          line-height: 1.5;
+
+          &:hover {
+            /* Dropdown link on hover */
+            background: lighten($main-color, 10);
+            color: #fff;
+          }
+        }
+
+        &.current-menu-item, &.current_page_ancestor, &.current_page_parent {
+          > a {
+            background: lighten($main-color, 10);
+            color: #fff;
+          }
+        }
+      }
+
+      .submenu {
+        /* Styles for 2nd level dropdown menu */
+      }
+    }
+  }
+}
+
+@include breakpoint(medium only) {
+  .header-menu.menu {
+    > li {
+      > a {
+        /* First level menu links styles to fix responsive lack of space */
+
+      }
+    }
+  }
+}
+
+@include breakpoint(large only) {
+  .header-menu.menu {
+    > li {
+      > a {
+        /* First level menu links styles to fix responsive lack of space */
+
+      }
+    }
+  }
+}
+

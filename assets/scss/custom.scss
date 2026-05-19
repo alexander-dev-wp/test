@@ -1,0 +1,661 @@
+// Foundation
+@import "inc/foundation-custom";
+
+/* Plugins */
+// Slick
+@import 'plugins/slick.scss';
+// Fancybox
+@import 'plugins/fancybox.v3';
+//@import 'plugins/fancybox.v4';
+// Home slider
+@import 'inc/slider';
+// Animation
+@import 'inc/animation';
+
+/* ---------------------------------------
+	Typography / Forms / Inputs / Buttons
+--------------------------------------- */
+
+@import 'typography';
+
+/* ---------------------------------------
+	WooCommerce
+--------------------------------------- */
+
+//@import 'inc/woo';
+
+/* -----------------------------------------
+   WordPress Core Classes
+----------------------------------------- */
+
+@import 'inc/wp-core';
+
+/* -----------------------------------------
+   General fixes
+----------------------------------------- */
+
+html {
+  height: 100%;
+}
+
+body {
+  position: static !important;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+main {
+  display: block;
+}
+
+iframe {
+  width: 100%;
+}
+
+*:last-child {
+  margin-bottom: 0;
+}
+
+img, .woocommerce img, .woocommerce-page img {
+  transition: opacity 0.3s ease-in-out;
+
+  &.pre-lazyload, &[data-lazy-src] {
+    opacity: 0;
+  }
+
+  &.lazyloaded {
+    opacity: 1;
+  }
+}
+
+/* ---------------------------------------
+	Foundation tweaks
+--------------------------------------- */
+
+.responsive-embed {
+  display: block;
+}
+
+:root {
+  @each $bp in $breakpoint-classes {
+    @include breakpoint($bp) {
+      --grid-col-gap: #{rem-calc(-zf-get-bp-val($grid-margin-gutters,$bp))};
+    }
+  }
+}
+
+.grid-container {
+  width: 100%;
+}
+
+.grid-container:not(.full) > .grid-padding-x {
+  margin-right: calc(var(--grid-col-gap, 2rem) * -0.5);
+  margin-left: calc(var(--grid-col-gap, 2rem) * -0.5);
+}
+
+.grid-padding-x .grid-padding-x {
+  margin-right: calc(var(--grid-col-gap, 2rem) * -0.5);
+  margin-left: calc(var(--grid-col-gap, 2rem) * -0.5);
+}
+
+.grid-padding-x > .cell {
+  padding-right: calc(var(--grid-col-gap, 2rem) * 0.5);
+  padding-left: calc(var(--grid-col-gap, 2rem) * 0.5);
+}
+
+body {
+  --section-width: #{$global-width};
+  --section-horizontal-padding: calc(var(--grid-col-gap, 2rem) * 0.5);
+  --side-offset: max(calc((100% - var(--section-width)) / 2 + var(--section-horizontal-padding)), var(--section-horizontal-padding));
+}
+
+.left-offset {
+  padding-left: var(--side-offset);
+}
+
+.right-offset {
+  padding-right: var(--side-offset);
+}
+
+/* -----------------------------------------
+    Contact Form
+----------------------------------------- */
+
+/*basic Gravity Form styles and fixes, if you dont need/use this -
+comment or delete styles below*/
+
+@import 'inc/gform';
+
+/* ---------------------------------------
+	Fanbcybox
+--------------------------------------- */
+
+img.fancybox-image {
+  width: 100%;
+  height: 100%;
+}
+
+/* ------------------------------------
+    Content Styles
+------------------------------------- */
+
+.main-content {
+  padding-top: rem-calc(48);
+  padding-bottom: rem-calc(48);
+}
+
+/* Preloader */
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.preloader {
+  position: fixed;
+  z-index: 100000000;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  visibility: visible;
+  opacity: 1;
+  background-color: #fff;
+  color: #222;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+
+  &--hidden {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.preloader__icon {
+  @include position-center;
+
+  &::before {
+    content: '\f1ce';
+    display: block;
+    font-family: $fa;
+    font-size: rem-calc(40);
+    font-weight: 900;
+    animation: spin 1s ease-in-out infinite;
+  }
+}
+
+/* Search form */
+
+.search-form {
+  position: relative;
+
+  .posts-list & {
+    margin-bottom: rem-calc(40);
+  }
+}
+
+.search-form__input {
+  padding-right: rem-calc(72);
+}
+
+.search-form__submit {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  height: auto;
+  padding: rem-calc(10 12);
+  cursor: pointer;
+  //font-size: 0; // Uncomment to use icon in search button
+
+  &::after {
+    //content: "\f002"; // Uncomment to use icon in search button
+    font-family: $fa;
+    font-size: rem-calc(20);
+    font-weight: 900;
+  }
+}
+
+/* 404 page */
+
+.not-found {
+  padding-top: rem-calc(100);
+  padding-bottom: rem-calc(100);
+
+  .label {
+    margin-left: rem-calc(4);
+    padding: rem-calc(4 10);
+    background-color: $main-color;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+      background-color: darken($main-color, 8);
+      color: #fff;
+    }
+  }
+}
+
+/* ---------------------------------------
+	Repeatable blocks
+--------------------------------------- */
+
+@import "repeatable-blocks";
+
+/* ---------------------------------------
+	Gutenberg default styles
+--------------------------------------- */
+
+@import "inc/gutenberg";
+
+/* ---------------------------------------
+	Gutenberg custom blocks
+--------------------------------------- */
+
+@import "blocks";
+
+/* ---------------------------------------
+	Header
+--------------------------------------- */
+
+@import 'header';
+
+/* ---------------------------------------
+	Sidebar
+--------------------------------------- */
+
+@import 'sidebar';
+
+/* ---------------------------------------
+	Footer
+--------------------------------------- */
+
+@import 'footer';
+
+/*---------------------------------------
+	TMPL: Home page
+---------------------------------------*/
+
+@import 'templates/home';
+
+/* ---------------------------------------
+	Page: Blog
+--------------------------------------- */
+
+@import 'templates/blog';
+
+/* ---------------------------------------
+	TMPL: Default page
+--------------------------------------- */
+
+@import 'templates/default';
+
+/* ---------------------------------------
+	TMPL: Contact page
+--------------------------------------- */
+
+@import 'templates/contact';
+
+/* ---------------------------------------
+	TMPL: About page
+--------------------------------------- */
+
+@import 'templates/about';
+
+/* ---------------------------------------
+	TMPL: Products page
+--------------------------------------- */
+
+@import 'templates/products';
+
+/* ---------------------------------------
+	TMPL: Services page
+--------------------------------------- */
+
+@import 'templates/services';
+
+/* ---------------------------------------
+	TMPL: Carpet page
+--------------------------------------- */
+
+@import 'templates/carpet';
+
+/* ---------------------------------------
+	TMPL: Hiring page
+--------------------------------------- */
+
+@import 'templates/hiring';
+
+/* ---------------------------------------
+	TMPL: Hiring new page
+--------------------------------------- */
+
+@import 'templates/hiring-new';
+
+/* ---------------------------------------
+	PARTS
+--------------------------------------- */
+
+@import 'parts/accordion';
+@import 'parts/content';
+@import 'parts/explore-slider';
+@import 'parts/faq';
+@import 'parts/options';
+@import 'parts/process';
+@import 'parts/review';
+@import 'parts/showroom';
+@import 'parts/slider';
+@import 'parts/text';
+@import "parts/google";
+
+/*anchors*/
+.home__anchor {
+  justify-content: flex-end;
+  padding: rem-calc(26 0 0 0);
+  @include breakpoint(small down) {
+    padding: rem-calc(60 0 90 0);
+    justify-content: center;
+  }
+}
+
+.product__anchor {
+  padding: rem-calc(130 0 64 0);
+}
+
+.sheet-vinyl__anchor {
+  padding: 4.375rem 0 10.4375rem 0;
+  @include breakpoint(small down) {
+    padding: rem-calc(0 0 66 0);
+  }
+}
+
+.carpet__anchor {
+  padding: 4.375rem 0 3.4375rem 0;
+  @include breakpoint(small down) {
+    padding: 2.375rem 0 3.4375rem 0;
+  }
+}
+
+.hardwood__anchor {
+  padding: 1.375rem 0 5.4375rem 0;
+}
+
+.blog__anchor {
+  justify-content: flex-end;
+  padding: rem-calc(46 0 82 0);
+  @include breakpoint(small down) {
+    justify-content: center;
+  }
+}
+
+.single__anchor {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0px);
+  @include breakpoint(medium down) {
+    position: static;
+    transform: none;
+    margin-top: rem-calc(57);
+  }
+}
+
+.about__anchor {
+  padding: rem-calc(86 0 119 0);
+  @include breakpoint(small down) {
+    padding: 6.1875rem 0 4.1875rem 0
+  }
+
+  .page__anchor {
+    position: static;
+  }
+}
+
+.laminate__anchor {
+  padding: 4.375rem 0 6.4375rem 0;
+  @include breakpoint(small down) {
+    padding: 1.375rem 0 4.4375rem 0;
+  }
+}
+
+.area__anchor {
+  padding: 4.375rem 0 7.4375rem 0;
+  @include breakpoint(small down) {
+    padding: 0 0 4.4375rem 0;
+  }
+}
+
+/*Single Page*/
+.single__main {
+  padding: rem-calc(93 0 149 0);
+
+  ul {
+    list-style-position: outside;
+    padding-left: rem-calc(16);
+  }
+
+  @include breakpoint(small down) {
+    padding: 5.8125rem 0 3.3125rem 0;
+  }
+
+  .single__aside {
+    @include breakpoint(medium down) {
+      max-width: 26.5625rem;
+      margin: 0 auto;
+    }
+  }
+
+  .single__wrapper {
+    display: grid;
+    grid-template-columns: 1fr rem-calc(326);
+    column-gap: rem-calc(42);
+    max-width: rem-calc(1165);
+    margin: 0 auto;
+    row-gap: rem-calc(60);
+    @include breakpoint(medium down) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    .single {
+      @include breakpoint(large up) {
+        padding-left: rem-calc(50);
+      }
+    }
+  }
+
+  .single__thumbnail img {
+    max-height: rem-calc(339);
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: rem-calc(27);
+    border-radius: 10px;
+    @include breakpoint(small down) {
+      max-height: 13.1875rem;
+    }
+  }
+
+  .page-title {
+    font-size: rem-calc(32);
+    font-weight: 500;
+    color: #1E1E1E;
+    line-height: 1.3;
+    margin-bottom: rem-calc(28);
+    @include breakpoint(small down) {
+      font-size: rem-calc(24);
+    }
+  }
+
+  .blog__taxonomy {
+    margin-bottom: rem-calc(28);
+  }
+
+  .entry__content {
+    color: #1B1B1F;
+  }
+
+  .share-box {
+    background-color: #191B1E !important;
+    border-radius: 10px;
+    padding: rem-calc(20);
+    background-repeat: no-repeat;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+
+    .share-box__links {
+      position: relative;
+    }
+
+    svg {
+      opacity: 0.3;
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      top: 0;
+    }
+
+    .share-links__link:hover span:before {
+      color: $sub-color;
+    }
+
+    .share-links__link span:before {
+      color: $total-white;
+      font-size: rem-calc(30);
+      transition-duration: 0.3s;
+    }
+
+    .share-box__title {
+      color: $total-white;
+      font-size: rem-calc(16);
+      font-weight: 600;
+      position: relative;
+    }
+  }
+
+  .single__aside {
+    position: relative;
+
+    img {
+      border-radius: 10px;
+      margin-bottom: rem-calc(28);
+      object-fit: cover;
+      @include breakpoint(medium down) {
+        max-height: rem-calc(580);
+      }
+    }
+  }
+
+  .blog__share-bottom {
+    padding: rem-calc(91 0 44 0);
+    border-bottom: 1px solid rgba(108, 120, 128, 1);
+
+    svg {
+      position: absolute;
+      width: rem-calc(367);
+      height: rem-calc(366);
+      top: rem-calc(-133);
+      left: rem-calc(-13);
+      gap: 0px;
+    }
+
+    .share-box {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    h6 {
+      font-weight: 400 !important;
+      font-size: rem-calc(18) !important;
+    }
+  }
+
+  .related__posts {
+    max-width: 72.8125rem;
+    margin: rem-calc(40) auto 0 auto;
+    @include breakpoint(small down) {
+      max-width: rem-calc(355);
+      margin: rem-calc(96) auto 0 auto;
+    }
+
+    h5 {
+      font-size: rem-calc(20);
+      font-weight: 600;
+      line-height: 1.46;
+      @include breakpoint(small down) {
+        text-align: center;
+      }
+    }
+  }
+
+  .related__posts-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: rem-calc(32);
+    @include breakpoint(small down) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    article {
+      border-radius: 10px;
+      background-color: rgba(248, 248, 248, 1);
+      padding: rem-calc(10);
+      @include breakpoint(small down) {
+        padding: rem-calc(15 15 40 15);
+      }
+
+      img {
+        border-radius: 10px;
+        border: 1px solid rgba(201, 201, 201, 1);
+        margin-bottom: rem-calc(10);
+        object-fit: cover;
+        max-height: rem-calc(160);
+        width: 100%;
+        @include breakpoint(small down) {
+          max-height: rem-calc(160);
+          width: 100%;
+        }
+      }
+
+      h6 {
+        font-size: rem-calc(18);
+        line-height: 1.4;
+        margin-bottom: rem-calc(10);
+      }
+
+      .related-info-wrapper {
+        display: flex;
+        align-items: center;
+        gap: rem-calc(5);
+
+        div {
+          line-height: 1.2;
+          color: rgba(65, 69, 71, 1);
+        }
+
+        .dot {
+          width: rem-calc(5);
+          height: rem-calc(5);
+          background-color: rgba(65, 69, 71, 1);
+          border-radius: 50%;
+        }
+      }
+
+    }
+  }
+}
+
+/*Search Form*/
+#searchform label {
+  display: none;
+}
+
+.preview {
+  margin-bottom: rem-calc(30);
+}

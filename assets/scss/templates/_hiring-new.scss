@@ -1,0 +1,279 @@
+/*Hiring Page New*/
+
+.hiring__content-new .cell {
+  @include breakpoint(small down) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.hiring-new .grid-container {
+  @include breakpoint(small down) {
+    padding-left: rem-calc(8);
+    padding-right: rem-calc(8);
+  }
+}
+
+.hiring__hero-mobile {
+  display: none;
+  @include breakpoint(small down) {
+    display: block;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+
+.hiring__hero {
+  @include breakpoint(small down) {
+    display: none;
+  }
+}
+
+.hiring__hero-new-wrapper{
+  padding: rem-calc(88 0 59 0);
+  max-width: rem-calc(1210);
+  margin: 0 auto;
+  min-height: rem-calc(395);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: white;
+
+  @include breakpoint(small down) {
+    padding: rem-calc(88 0 285 0);
+  }
+
+  h1 {
+    font-size: rem-calc(64) !important;
+    color: white !important;
+    max-width: rem-calc(605);
+    color: #fff;
+    line-height: 1.05;
+    letter-spacing: -1px;
+
+    @include breakpoint(small down) {
+      font-size: rem-calc(52) !important;
+    }
+  }
+
+  p {
+    margin-bottom: rem-calc(54);
+  }
+
+  .contact__button {
+    padding: rem-calc(18.5 32 18.5 62);
+    background-color: white;
+    text-decoration: none;
+    border-radius: rem-calc(8);
+    font-size: rem-calc(18);
+    font-weight: 500;
+    font-family: "Inter", sans-serif !important;
+    position: relative;
+
+    &:hover {
+      //text-decoration: underline;
+      color: #e11b28;
+    }
+
+    &:before {
+      position: absolute;
+      content: "";
+      background: url("https://carpetwholesalers.net/wp-content/uploads/2024/11/phone.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: rem-calc(20);
+      height: rem-calc(20);
+      position: absolute;
+      top: 50%;
+      left: 18%;
+      transform: translate(0%, -50%);
+    }
+  }
+}
+
+.hiring-new {
+  padding: rem-calc(78 80);
+
+  @include breakpoint(small down) {
+    padding: rem-calc(48 10 10 10);
+  }
+
+  .hiring__wrapper-new {
+
+    .aditional-content {
+      text-align: center;
+      margin-top: rem-calc(111);
+      margin-bottom: rem-calc(60);
+
+      img {
+        margin-bottom: rem-calc(28);
+      }
+
+      a {
+
+        &:hover {
+          color: #e11b28;
+        }
+      }
+    }
+
+    h2 {
+      text-align: center;
+      padding-bottom: rem-calc(26);
+
+      @include breakpoint(small down) {
+        padding-bottom: rem-calc(34);
+      }
+    }
+
+    .vacancy-card {
+      padding: rem-calc(41 28);
+      border: rem-calc(2) solid rgba(121, 121, 121, 0.16);
+      border-radius: rem-calc(20);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: box-shadow 0.3s ease;
+
+      @include breakpoint(small down) {
+        margin-bottom: rem-calc(20);
+      }
+      //min-width: rem-calc(398);
+
+      &:hover {
+        box-shadow: 8px 16px 36px -14px rgba(0,0,0,0.75);
+        -webkit-box-shadow: 8px 16px 36px -14px rgba(0,0,0,0.75);
+        -moz-box-shadow: 8px 16px 36px -14px rgba(0,0,0,0.75);
+        //cursor: pointer;
+      }
+
+      .button {
+        width: 100%;
+        color: white;
+        background-color: #E11B28;
+        padding: rem-calc(12 55 12 85);
+        border-radius: rem-calc(8);
+        position: relative;
+
+        @include breakpoint(small down) {
+          padding: rem-calc(11 52 11 81);
+        }
+
+        &:hover {
+          background-color: black;
+        }
+
+        &:before {
+          position: absolute;
+          content: "";
+          background: url("https://carpetwholesalers.net/wp-content/uploads/2026/01/66d432e8b07c9f62ac93a48d_CALL-yellow.svg.svg");
+          background-repeat: no-repeat;
+          background-size: contain;
+          width: rem-calc(20);
+          height: rem-calc(20);
+          position: absolute;
+          top: 50%;
+          left: 22%;
+          transform: translate(0%, -50%);
+
+        }
+      }
+
+      .location {
+        margin-left: rem-calc(30);
+        position: relative;
+        color: #E11B28;
+
+        &:before {
+          position: absolute;
+          content: "";
+          background: url("https://carpetwholesalers.net/wp-content/uploads/2026/01/Location.svg");
+          background-repeat: no-repeat;
+          background-size: contain;
+          width: rem-calc(20);
+          height: rem-calc(20);
+          position: absolute;
+          top: 50%;
+          left: rem-calc(-30);
+          transform: translate(0%, -50%);
+        }
+      }
+
+      h4 {
+        font-size: rem-calc(28);
+        font-weight: 600;
+        margin: 0;
+
+        @include breakpoint(small down) {
+          font-size: rem-calc(26);
+        }
+      }
+
+      .vacancy-description {
+        padding-top: rem-calc(34);
+        padding-bottom: rem-calc(34);
+      }
+
+      .job-type-wrap {
+        display: flex;
+        justify-content: space-between;
+
+        .job-type{
+          margin-left: rem-calc(30);
+          position: relative;
+
+          &:before {
+            position: absolute;
+            content: "";
+            background: url("https://carpetwholesalers.net/wp-content/uploads/2026/01/Business.svg");
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: rem-calc(20);
+            height: rem-calc(20);
+            position: absolute;
+            top: 35%;
+            left: rem-calc(-30);
+            transform: translate(0%, -50%);
+          }
+
+          span {
+            color: #DDDDDD;
+          }
+        }
+
+        .working-hours {
+          margin-left: rem-calc(30);
+          position: relative;
+
+          &:before {
+            position: absolute;
+            content: "";
+            background: url("https://carpetwholesalers.net/wp-content/uploads/2026/01/Future.svg");
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: rem-calc(20);
+            height: rem-calc(20);
+            position: absolute;
+            top: 35%;
+            left: rem-calc(-30);
+            transform: translate(0%, -50%);
+          }
+          span {
+            color: #DDDDDD;
+          }
+        }
+      }
+    }
+  }
+
+  .hiring__anchor {
+    justify-content: center;
+  }
+}
+
+.page__anchor a {
+  text-decoration: none;
+}
+
+

@@ -1,0 +1,107 @@
+.google__section {
+  padding-top: rem-calc(140);
+  @include breakpoint(small down) {
+    padding-top: 5rem;
+  }
+
+  h2 {
+    @include breakpoint(small down) {
+      max-width: rem-calc(210px);
+      margin: 0 auto rem-calc(14) auto;
+
+    }
+    text-align: center;
+
+  }
+
+  .text-large p {
+    margin: 0;
+  }
+
+  .google__slider {
+    margin-top: rem-calc(70);
+  }
+
+  .google__item {
+    padding: 0 5.125rem;
+
+    .google__logo {
+      display: flex;
+      justify-content: center;
+    }
+
+    img {
+      max-width: rem-calc(68);
+      margin-bottom: rem-calc(20);
+    }
+
+
+    .google__content {
+      p {
+        color: $total-black;
+        margin-bottom: rem-calc(20);
+      }
+    }
+
+    .google__title {
+      font-size: rem-calc(16);
+      font-weight: 600;
+      font-family: $sub-font;
+      line-height: 1.193;
+      text-align: center;
+      color: $total-black;
+    }
+  }
+
+  .slick-center .google__item {
+    border-right: 1px solid #CCCCCC;
+    border-left: 1px solid #CCCCCC;
+    @include breakpoint(medium down) {
+      border: 0;
+    }
+  }
+
+  .google__nav {
+    position: absolute;
+    top: 50%;
+    transform: translate(0px, -50%);
+    width: rem-calc(42);
+    height: rem-calc(42);
+    border-radius: 50%;
+    border: 3px solid $sub-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition-duration: 0.2s;
+    z-index: 9;
+    @include breakpoint(small down) {
+      width: rem-calc(30);
+      height: rem-calc(30);
+      &:before {
+        font: rem-calc(16);
+      }
+    }
+
+    &:hover {
+      background-color: $sub-color;
+      cursor: pointer;
+
+      &:before {
+        color: white;
+      }
+    }
+
+    &:before {
+      font-size: rem-calc(22);
+      color: $sub-color;
+    }
+  }
+
+  .google__next {
+    right: 0;
+  }
+
+  .google__prev {
+    left: 0;
+  }
+}

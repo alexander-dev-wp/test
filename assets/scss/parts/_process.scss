@@ -1,0 +1,132 @@
+
+.process__section {
+  padding-top: rem-calc(130);
+  @include breakpoint(small down) {
+    padding-top: rem-calc(65);
+  }
+
+  .process__subtitle {
+    @include breakpoint(small down) {
+      margin: 0 auto rem-calc(15) auto;
+    }
+  }
+
+  .process-repeater__wrapper {
+    max-width: rem-calc(1196.71);
+    margin: rem-calc(84 auto 0 auto);
+    display: grid;
+    grid-template-columns: repeat(4, minmax(rem-calc(249), auto));
+    gap: rem-calc(40);
+    overflow-x: auto;
+    scrollbar-width: none;
+
+    @include breakpoint(small down) {
+      margin: rem-calc(45) auto 0 auto;
+    }
+  }
+
+  .process__item {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &:last-child {
+      .process-item__arrow {
+        display: none;
+      }
+    }
+
+    img {
+      max-width: rem-calc(75);
+      max-height: rem-calc(75);
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .process-item__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: rem-calc(30);
+    margin-bottom: rem-calc(28);
+    height: rem-calc(75);
+    position: relative;
+  }
+
+  .process__text p {
+    margin: 0;
+  }
+
+  .process-item__arrow {
+    border-bottom: 1px dashed $sub-color;
+    width: rem-calc(170);
+    border-top: 1px dashed $sub-color;
+    position: absolute;
+    left: 100%;
+    transform: translateX(rem-calc(16));
+
+    @include breakpoint(medium) {
+      transform: translateX(rem-calc(24));
+    }
+
+    @include breakpoint(large) {
+      transform: translateX(rem-calc(36));
+    }
+
+    &:before {
+      content: "";
+      width: 5px;
+      height: 5px;
+      background-color: $sub-color;
+      border-radius: 50%;
+      display: block;
+      position: absolute;
+      left: rem-calc(-4);
+      transform: translate(-0%, -50%);
+    }
+
+    &:after {
+      content: "";
+      width: 0;
+      height: 0;
+      border-top: rem-calc(3) solid transparent;
+      border-bottom: rem-calc(3) solid transparent;
+      border-left: rem-calc(3) solid $sub-color;
+      position: absolute;
+      transform: translate(-0%, -50%);
+      right: rem-calc(-4);
+    }
+  }
+
+  .process-item__text {
+    max-width: rem-calc(248);
+  }
+}
+
+.carpet-process__section {
+  padding-top: 12.125rem;
+  @include breakpoint(small down) {
+    padding-top: 5.5rem;
+  }
+}
+
+.hardwood-process__section {
+  padding-top: 10.125rem;
+}
+
+.laminate-flooring-process__section {
+  padding-top: 5.125rem;
+  @include breakpoint(small down) {
+    padding-top: 8.125rem;
+  }
+}
+
+.area-rugs-process__section {
+
+}
+
+.vinyl-plank-tile-process__section {
+  padding-top: 9.125rem;
+}

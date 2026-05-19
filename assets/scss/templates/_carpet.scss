@@ -1,0 +1,94 @@
+/* ---------------------------------------
+	TMPL: Carpet
+--------------------------------------- */
+.product__hero-section {
+  padding-bottom: rem-calc(120);
+  @include breakpoint(small down) {
+    padding-bottom: 3.5rem;
+  }
+
+  .product__hero-image {
+    position: relative;
+
+    .attachment-post-thumbnail {
+      max-height: rem-calc(448);
+      object-fit: cover;
+      width: 100%;
+    }
+
+    .product__hero-vector {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      @include breakpoint(small down) {
+        height: 40px;
+        object-fit: cover;
+        object-position: 25% 0%;
+      }
+    }
+  }
+
+  .product__hero-wrapper {
+    display: grid;
+    grid-template-columns: 1fr rem-calc(512);
+    max-width: rem-calc(1140);
+    margin: 0 auto;
+    padding-bottom: 7.25rem;
+    @include breakpoint(medium down) {
+      grid-template-columns: repeat(1, 1fr);
+      padding-bottom: 2.25rem;
+    }
+  }
+
+  .product__hero-content {
+    margin-top: 3.5rem;
+    @include breakpoint(medium down) {
+      margin-top: 1.375rem;
+    }
+
+    p {
+      @include breakpoint(small down) {
+        font-size: rem-calc(18);
+      }
+    }
+  }
+
+  .breadcrumbs__wrapper {
+    max-width: rem-calc(1140);
+    margin: rem-calc(0 auto 13 auto);
+
+    .breadcrumbs {
+      display: flex;
+      gap: rem-calc(7);
+      align-items: center;
+    }
+
+    a:hover {
+      color: $sub-color;
+    }
+
+    @include breakpoint(small down) {
+      span, a {
+        font-size: rem-calc(12);
+
+      }
+    }
+
+    span {
+      color: $sub-color;
+    }
+  }
+}
+
+.sheet-vinyl-hero .product__hero-wrapper {
+  @include breakpoint(small down) {
+    padding-bottom: 5.25rem;
+  }
+}
+
+
+
+
+
+
+

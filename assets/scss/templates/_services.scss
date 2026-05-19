@@ -1,0 +1,242 @@
+/* ---------------------------------------
+	Services
+--------------------------------------- */
+/*Tabs*/
+.services__hero-section h1 {
+  max-width: 56.25rem;
+}
+
+.tab__section {
+  padding-top: rem-calc(125);
+  padding-bottom: rem-calc(80);
+
+  @include breakpoint(small down) {
+    padding-top: rem-calc(52);
+  }
+
+  .tabs {
+    background-color: transparent;
+    border: 0;
+    gap: rem-calc(35);
+    display: flex;
+    flex-direction: column;
+    padding: rem-calc(0 8);
+
+    &:before, &:after {
+      content: none;
+    }
+  }
+
+  .tab__title-wrapper {
+    border-radius: 10px;
+    padding: rem-calc(60) rem-calc(25) rem-calc(25) rem-calc(25);
+    background-color: #F4F4F4;
+    @include breakpoint(medium down) {
+      padding: rem-calc(60 25);
+    }
+    @include breakpoint(small down) {
+      display: flex;
+      align-items: center;
+      padding: rem-calc(25);
+      width: calc(100% + rem-calc(50));
+      overflow-x: auto;
+      margin-left: rem-calc(-25);
+      border-radius: 0px;
+      .tabs {
+        display: flex;
+        flex-direction: row;
+        flex: 1 0 max-content;
+      }
+      .tab__finance-link {
+        @include breakpoint(small down) {
+          margin-top: 0;
+        }
+        flex: 1 0 max-content;
+      }
+    }
+  }
+
+  .tabs-content {
+    border: 0px;
+    padding: rem-calc(26 0 0 70);
+    @include breakpoint(medium down) {
+      padding: rem-calc(50 0 0 0);
+    }
+
+    .tab__showroom {
+      display: block;
+    }
+  }
+
+  .tab__showroom {
+    display: none;
+  }
+
+  .showroom__active {
+    display: block;
+  }
+
+  .tab__wrapper {
+    position: relative;
+    display: grid;
+    grid-template-columns: rem-calc(348) 1fr;
+    @include breakpoint(medium down) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  .tabs-panel {
+    padding: 0;
+
+    .text-medium {
+      max-width: rem-calc(705);
+    }
+
+    h2 {
+      font-size: rem-calc(56);
+      line-height: 1.2;
+      letter-spacing: -1px;
+      @include breakpoint(small down) {
+        font-size: rem-calc(36);
+      }
+    }
+
+    .tab__post-title {
+      font-size: rem-calc(20);
+      line-height: 1.46;
+      margin-top: rem-calc(73);
+    }
+  }
+
+  .tab__post-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: rem-calc(33);
+    @include breakpoint(small down) {
+      gap: rem-calc(60);
+    }
+
+    .tab__post-item {
+      display: grid;
+      grid-template-columns: rem-calc(300) 1fr;
+      gap: rem-calc(40);
+      align-items: center;
+
+      a:hover {
+        text-decoration: underline;
+        margin-bottom: rem-calc(26);
+      }
+
+      @include breakpoint(small down) {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    h5 {
+      max-width: rem-calc(365);
+      margin-bottom: rem-calc(22);
+    }
+
+    img {
+      max-height: rem-calc(185);
+      min-height: rem-calc(185);
+      object-fit: cover;
+      border-radius: 10px;
+    }
+  }
+
+  .tab__link a {
+    display: flex;
+    align-items: center;
+    gap: rem-calc(8);
+    font-weight: 500;
+    line-height: 1.5;
+    color: $total-white;
+  }
+
+  .tab__link {
+    margin-top: 1.125rem;
+  }
+
+  .tab__link a:after {
+    content: "";
+    font-weight: 900;
+    font-family: $fa;
+    color: $total-white;
+    width: rem-calc(18);
+    height: rem-calc(18);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $total-white;
+    font-size: rem-calc(9);
+  }
+
+  .tab__finance-link {
+    margin-top: 2.1875rem;
+    padding: 0 .5rem;
+  }
+
+  .tabs-title, .tab__finance-link {
+    img {
+      transition-duration: 0.2s;
+      transition-property: filter;
+      filter: brightness(0) saturate(100%) invert(42%) sepia(0%) saturate(13%) hue-rotate(275deg) brightness(93%) contrast(90%);
+    }
+
+    a {
+      background-color: transparent;
+      display: flex;
+      align-items: center;
+      gap: rem-calc(12);
+      padding: 0;
+
+      &:hover {
+        h6 {
+          color: $total-black;
+        }
+
+        img {
+          filter: brightness(0) saturate(100%) invert(21%) sepia(44%) saturate(5735%) hue-rotate(344deg) brightness(88%) contrast(102%);
+        }
+      }
+    }
+
+    h6 {
+      transition-duration: 0.2s;
+      color: #666666;
+      font-size: rem-calc(20);
+      line-height: 1.4;
+    }
+  }
+
+  .tabs-title.is-active {
+    a {
+      h6 {
+        color: $total-black;
+      }
+
+      img {
+        filter: brightness(0) saturate(100%) invert(21%) sepia(44%) saturate(5735%) hue-rotate(344deg) brightness(88%) contrast(102%);
+      }
+    }
+  }
+
+  .showroom__wrapper {
+    margin-top: rem-calc(60);
+    min-height: rem-calc(427);
+    padding: rem-calc(15);
+    display: flex;
+    align-items: flex-end;
+    border-radius: 10px;
+
+    h4 {
+      color: $total-white;
+      font-weight: 500;
+      @include breakpoint(small down) {
+        font-size: rem-calc(32);
+      }
+    }
+  }
+}
